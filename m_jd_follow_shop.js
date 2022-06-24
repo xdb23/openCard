@@ -1,10 +1,8 @@
-//问题反馈:https://t.me/Wall_E_Channel
-/**
- export M_FOLLOW_SHOP_ARGV=""
- cron "1 1 1 1 1" jd_m_follow_shop.js
- */
-let mode = __dirname.includes('./magic')
-const {Env} = mode ? require('./magic') : require('./utils/magic')
+/*
+7 7 7 7 7 m_jd_follow_shop.js
+*/
+let mode = __dirname.includes('magic')
+const {Env} = mode ? require('./magic') : require('./magic')
 const $ = new Env('M关注有礼');
 $.followShopArgv = process.env.M_FOLLOW_SHOP_ARGV
     ? process.env.M_FOLLOW_SHOP_ARGV
@@ -124,3 +122,4 @@ async function getShopHomeActivityInfo() {
     let {status, data} = await $.request(url, headers, newVar.sign);
     return data;
 }
+
