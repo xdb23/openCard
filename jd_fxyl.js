@@ -12,7 +12,7 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
 let authorCodeList = [];
-let ownCookieNum = 4;
+let ownCookieNum = 2;
 let isGetAuthorCodeList = true
 let activityId = ''
 let activityShopId = ''
