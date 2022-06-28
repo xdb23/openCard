@@ -13,7 +13,7 @@ TG: https://t.me/HarbourToulu
 请求太频繁会被黑ip
 过10分钟再执行
 
-cron:10 0,20 28-30,1-31 6,7 * *
+cron:1 1 1 1 1 1
 */
 
 const $ = new Env('06.28-07.30 组队分豆-蒙牛');
