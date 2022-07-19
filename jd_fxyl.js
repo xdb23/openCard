@@ -7,7 +7,7 @@ cron:1 1 1 1 *
 注意控制ck数量
 即时任务，无需cron
 */
-const $ = new Env("分享有礼2-落幕");
+const $ = new Env("分享有礼2");
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';

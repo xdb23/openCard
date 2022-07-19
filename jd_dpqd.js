@@ -1,11 +1,15 @@
 /*
-cron 0 0 * * * jd_dpqd.js
-店铺签到，各类店铺签到，有新的店铺直接添加token即可
-搬运cui521大佬脚本，请勿外传！！！
+cron 45 0 0,23 * * * jd_dpqd.js
+店铺签到，店铺Token默认从本地环境变量DPQDTK中获取，若本地无则从远端获取。
+
+Fix by HarbourJ
+TG: https://t.me/HarbourToulu
+
 环境变量:
 DPQDTK: token1&token2
 仓库不再提供token
 */
+
 let token = []
 if (process.env.DPQDTK) {
   if (process.env.DPQDTK.includes('\n')) {
@@ -14,10 +18,33 @@ if (process.env.DPQDTK) {
     token = [...process.env.DPQDTK.split('&'),...token]
   }
 }
+
 if (!token.length) {
-  console.log('无店铺签到token,不执行.需自备token:环境变DPQDTK: tk1&tk2.')
-  return
+  console.log('无本地店铺签到token, 尝试获取远端店铺签到token')
+  token = [
+      'F573A078062F9F18BFCC39080864D7F5',
+      'DC2D503AEC0235CB3F574DE47192325A',
+      '69DC80A178F64FC67584EB2B1D7F4C71',
+      '59F9E55AEA2F330E8025A166CE25F3D3',
+      '01A1D5AA9946C3D4D57EF6BF2792A6DB',
+      '01E3C5FB0D4CF3745A33246856160637',
+      '7CCFEA84BB79CB183F4958718D0B4FC1',
+      '4C3C6C5C1B285AAF5376FE52FF30D616',
+      '05451231AF1DE95AC10FC3A56C3F8A73',
+      '9472AD6B336E1F6FCEC9D5A21ECC9438',
+      '8775A60DBE2248BA6CD2C5DE606A83C8',
+      '5EDD12DD47A18509E018D742F0EE16C7',
+      '37D0FAA99892A9E613A1B46E5A55973B',
+      '835C69D00C3226A2C5A20A9DD4851CB3',
+      'BD0D2682B13A75E0AAF7D8E78844F07C',
+      'F327D3978F47808803FD532F19BE3696',
+      'D15533B3721128F2C45001D7D5255FE9',
+      'C387DE3A3F4381FB3E451F0C40069FE6',
+      '662E62C629FB6B20CED938E41A0DC026',
+      'A92269DC92DDD73CC5EB38B3BACF51E3',
+  ]
 }
+console.log(token)
 const $ = new Env('店铺签到');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
