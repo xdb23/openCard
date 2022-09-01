@@ -4,10 +4,10 @@ JOY通用开卡活动
 如遇火爆请重跑一次即可
 奖励未到账请再次运行本脚本
 日志显示已入会，才代表奖励已经领取
-cron:2 1 * * *
+cron:1 1 1 1 1
 ============Quantumultx===============
 [task_local]
-2 1 * * * jd_joyopen.js, tag=JOY通用开卡活动, enabled=true
+1 1 1 1 1 jd_joyopen.js, tag=JOY通用开卡活动, enabled=true
 */
 const $ = new Env('JOY通用开卡活动');
 const Faker=require('./sign_graphics_validate.js')
