@@ -1,5 +1,5 @@
 /*
-cron "1 1 1 1 1"
+cron "1 1 1 1 1" m_jd_wx_luckDraw.js
 */
 let mode = __dirname.includes('magic')
 const {Env} = mode ? require('./magic') : require('./magic')
